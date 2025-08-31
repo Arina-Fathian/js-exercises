@@ -10,6 +10,15 @@
 // console.log(array);
 
 function randomNumber(length, range, min) {
+  if (
+    range <= min ||
+    typeof min !== "number" ||
+    typeof range !== "number" ||
+    typeof length !== "number"
+  ) {
+    console.log("invalid!");
+    return;
+  }
   const array = [];
   for (let i = 0; i < length; ) {
     const randNum = Math.round(Math.random() * range);
@@ -22,4 +31,4 @@ function randomNumber(length, range, min) {
   return array;
 }
 
-console.log(randomNumber(10, 100, 75));
+console.log(randomNumber(10, 100, 50));
